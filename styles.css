@@ -1,0 +1,348 @@
+/* Сброс стилей по умолчанию */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Общие стили для body */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Georama', sans-serif;
+}
+
+/* Стиль для основного блока с фоном */
+#main {
+    background-image: url('/Users/darakotova/Desktop/portfolio/images/Main_fon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 104px 0;
+    min-height: 100vh;
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+    position: fixed;
+    top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+}
+
+/* Левый и правый фреймы для кнопок */
+.frame-left,
+.frame-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Стиль для кнопок */
+/* Стиль для кнопок */
+.menu-button,
+.contact-button {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 30px;
+    padding: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Эффекты при наведении */
+.menu-button:hover {
+    background-color: #7152F1;
+    width: 130px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль иконки меню */
+.menu-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    transition: transform 0.8s ease;
+}
+
+.menu-button:hover .menu-icon {
+    transform: rotate(180deg);
+}
+
+/* Текст Darya BB */
+.darya-text,
+.designer-text {
+    position: absolute;
+    font-family: 'Bagel Fat One', sans-serif;
+    font-size: 110px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+/* Позиционирование текста Darya BB */
+.darya-text {
+    top: 256px;
+    left: 288px;
+}
+
+/* Позиционирование текста DESIGNER */
+.designer-text {
+    top: 400px;
+    left: 624px;
+}
+
+.image-container {
+    position: absolute;
+    top: 264px;
+    left: 840px;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), box-shadow 0.4s ease-in-out;
+}
+/* Стиль для изображения */
+.property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), filter 0.4s ease-in-out;
+}
+
+/* Стиль для векторного наложения */
+.vector-overlay {
+    position: absolute;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* Эффекты при наведении на изображение */
+.image-container:hover {
+    transform: translateX(20px) scale(1.05);
+}
+
+.property-image:hover {
+    transform: rotate(23deg);
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.vector-overlay:hover {
+    transform: rotate(83deg);
+}
+
+/* Текст UX/UI DESIGNER */
+.ux-ui-text {
+    position: absolute;
+    top: 320px;
+    left: 1000px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    right: 282px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Текст Creativity and Uniqueness for Your Brand */
+.creativity-text {
+    text-align: right;
+    position: absolute;
+    top: 460px;
+    left: 288px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    transition: transform 0.4s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Стиль для выделенных слов */
+.highlight {
+    transition: color 0.3s ease;
+}
+
+/* Эффекты при наведении на блок creativity-text */
+.creativity-text:hover {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.creativity-text:hover .highlight {
+    color: #F4FF79;
+}
+/* Блок #info с фоном */
+/* Блок #info с фоном */
+/* Блок #info с фоном */
+/* Блок #info */
+/* Блок #info */
+#info {
+    position: relative;
+    background-image: url('images/info0fon.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Блок контента внутри #info */
+.info-content {
+    text-align: left; /* Выравнивание по левому краю */
+    max-width: 515px; /* Ширина текста */
+    margin: 0 auto;
+}
+
+/* Стиль текста Hello! */
+.info-hello {
+    font-family: 'Bagel Fat One', sans-serif;
+    font-size: 88px; /* Кратно 4px */
+    margin: 0 0 16px; /* Отступ снизу для разделения */
+    color: #fff; 
+    text-align: right;
+}
+
+/* Стиль текста имени */
+.info-name {
+    font-family: 'Georama', sans-serif;
+    font-size: 48px; /* Кратно 4px */
+    font-weight: 400;
+    margin: 0 0 16px; /* Отступ снизу */
+    color: #fff;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.info-name-bold {
+    font-weight: 700;
+}
+
+/* Стиль описания */
+.info-description {
+    font-family: 'K2D', sans-serif;
+    font-size: 24px; /* Кратно 4px */
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.8; 
+    margin: 0 auto; /* Центрирование */
+    padding: 0 16px; /* Внутренние отступы для удобства чтения */
+    width: 512px; /* Кратно 4px */
+    text-align: justify; 
+}
+
+.info-avatar {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.info-avatar:hover {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.2);
+}
+
+
+
+
+
+/*BOOOOOOOOOOOOOOOOOOX*/
+/* Общие стили для блока */
+/* Стили для контейнера outside-box */
+.outside-box {
+    position: relative;
+    width: 1440px;
+    height: 1072px;
+    background-color: #C89BFF;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для текста в блоке outside-box */
+.outside-box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    z-index: 2;
+    padding-left: 20px;
+    transition: transform 0.3s ease-out;
+}
+.underline {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.underline svg {
+    margin: 0 3px;
+    transition: transform 0.5s ease-out;
+}
+
+.outside-box-title,
+.outside-box-subtitle,
+.outside-box-description {
+    font-family: 'Bagel Fat One', sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+.animate-outside-container {
+    transform: translateX(0px); /* Начальное положение */
+    transition: transform 2s ease-out; /* Плавная анимация */
+}
+
+
+
+
+/*ABOUT*/
+
+
+.about {
+    position: relative;
+    width: 1440px;
+    height: 1072px;
+    background-color: #C89BFF;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card {
+    position: relative;
+    height: 626px;
+    width: 977px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out; /* Уменьшили время для более быстрого появления */
+}
+
+
