@@ -7,21 +7,25 @@
     box-sizing: border-box;
 }
 
-/* Общие стили для body */
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Georama', sans-serif;
+/* Общие стили для body и html */
+body, html {
+    overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+    width: 100vw; /* Ограничиваем ширину окна просмотра */
 }
 
-/* Стиль для основного блока с фоном */
+/* Основной контейнер с фоном */
 #main {
-    background-image: url('/Users/darakotova/Desktop/portfolio/images/Main_fon.png');
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/Main_fon.png');
+    background-size: cover; /* Масштабирование */
+    background-position: center; /* Центрирование */
     background-repeat: no-repeat;
-    padding: 104px 0;
-    min-height: 100vh;
+    width: 100vw; /* Ограничиваем ширину окна просмотра */
+    height: 100vh; /* Ограничиваем высоту окна просмотра */
+    position: relative; /* Для позиционирования дочерних элементов */
 }
 
 /* Контейнер для кнопок */
@@ -33,6 +37,7 @@ body {
     justify-content: space-between;
     padding: 0 16px;
     z-index: 1000;
+    overflow-x: hidden; /* Убираем горизонтальный скроллинг */
 }
 
 /* Левый и правый фреймы для кнопок */
@@ -43,27 +48,26 @@ body {
 }
 
 /* Стиль для кнопок */
-/* Стиль для кнопок */
 .menu-button,
 .contact-button {
     background-color: white;
     color: black;
-    font-size: 20px;
-    height: 48px;
+    font-size: 16px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 30px;
-    padding: 0 10px;
+    border-radius: 20px;
+    padding: 0 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none; /* Убираем обводку */
 }
-
 
 /* Эффекты при наведении */
 .menu-button:hover {
     background-color: #7152F1;
-    width: 130px;
+    width: 110px; /* Уменьшаем ширину при наведении */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -74,9 +78,9 @@ body {
 
 /* Стиль иконки меню */
 .menu-icon {
-    width: 36px;
-    height: 36px;
-    margin-right: 10px;
+    width: 28px; /* Уменьшаем размер иконки */
+    height: 28px; /* Уменьшаем размер иконки */
+    margin-right: 8px; /* Уменьшаем отступ */
     transition: transform 0.8s ease;
 }
 
@@ -87,37 +91,40 @@ body {
 /* Текст Darya BB */
 .darya-text,
 .designer-text {
-    position: absolute;
     font-family: 'Bagel Fat One', sans-serif;
-    font-size: 110px;
-    letter-spacing: 5px;
+    font-size: 60px;
+    letter-spacing: 3px;
     color: white;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Позиционирование текста Darya BB */
 .darya-text {
-    top: 256px;
-    left: 288px;
+    top: 180px;
 }
 
 /* Позиционирование текста DESIGNER */
 .designer-text {
-    top: 400px;
-    left: 624px;
+    top: 300px;
 }
 
+/* Контейнер для изображения */
 .image-container {
     position: absolute;
-    top: 264px;
-    left: 840px;
-    width: 140px;
-    height: 140px;
+    top: 200px;
+    left: 50%;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    transform: translateX(-50%);
     transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), box-shadow 0.4s ease-in-out;
 }
+
 /* Стиль для изображения */
 .property-image {
     width: 100%;
@@ -129,7 +136,6 @@ body {
 /* Стиль для векторного наложения */
 .vector-overlay {
     position: absolute;
-    z-index: 2;
     transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
@@ -150,58 +156,42 @@ body {
 /* Текст UX/UI DESIGNER */
 .ux-ui-text {
     position: absolute;
-    top: 320px;
-    left: 1000px;
-    font-size: 20px;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 400;
     color: white;
-    right: 282px;
-    width: 300px;
+    width: 200px;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
 }
 
 /* Текст Creativity and Uniqueness for Your Brand */
 .creativity-text {
-    text-align: right;
     position: absolute;
-    top: 460px;
-    left: 288px;
-    font-size: 20px;
+    top: 340px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 400;
     color: white;
+    text-align: center;
     transition: transform 0.4s ease, color 0.3s ease, opacity 0.3s ease;
+    width: 80%;
+    max-width: 300px;
 }
 
-/* Стиль для выделенных слов */
-.highlight {
-    transition: color 0.3s ease;
-}
-
-/* Эффекты при наведении на блок creativity-text */
-.creativity-text:hover {
-    opacity: 1;
-    transform: scaleX(1);
-}
-
-.creativity-text:hover .highlight {
-    color: #F4FF79;
-}
 /* Блок #info с фоном */
-/* Блок #info с фоном */
-/* Блок #info с фоном */
-/* Блок #info */
-/* Блок #info */
 #info {
-    position: relative;
-    background-image: url('images/info0fon.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100%;
+    width: 100vw; /* Ограничиваем ширину окна просмотра */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,29 +199,29 @@ body {
 
 /* Блок контента внутри #info */
 .info-content {
-    text-align: left; /* Выравнивание по левому краю */
-    max-width: 515px; /* Ширина текста */
+    text-align: center;
+    max-width: 300px;
     margin: 0 auto;
 }
 
 /* Стиль текста Hello! */
 .info-hello {
     font-family: 'Bagel Fat One', sans-serif;
-    font-size: 88px; /* Кратно 4px */
-    margin: 0 0 16px; /* Отступ снизу для разделения */
-    color: #fff; 
-    text-align: right;
+    font-size: 48px;
+    margin: 0 0 16px;
+    color: #fff;
+    text-align: center;
 }
 
 /* Стиль текста имени */
 .info-name {
     font-family: 'Georama', sans-serif;
-    font-size: 48px; /* Кратно 4px */
+    font-size: 24px;
     font-weight: 400;
-    margin: 0 0 16px; /* Отступ снизу */
+    margin: 0 0 16px;
     color: #fff;
     line-height: 1.5;
-    text-align: right;
+    text-align: center;
 }
 
 .info-name-bold {
@@ -241,14 +231,14 @@ body {
 /* Стиль описания */
 .info-description {
     font-family: 'K2D', sans-serif;
-    font-size: 24px; /* Кратно 4px */
+    font-size: 16px;
     font-weight: 400;
     color: #fff;
-    line-height: 1.8; 
-    margin: 0 auto; /* Центрирование */
-    padding: 0 16px; /* Внутренние отступы для удобства чтения */
-    width: 512px; /* Кратно 4px */
-    text-align: justify; 
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0 8px;
+    width: 300px;
+    text-align: justify;
 }
 
 .info-avatar {
@@ -256,21 +246,15 @@ body {
 }
 
 .info-avatar:hover {
-    transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1);
     filter: brightness(1.2);
 }
 
-
-
-
-
-/*BOOOOOOOOOOOOOOOOOOX*/
-/* Общие стили для блока */
 /* Стили для контейнера outside-box */
 .outside-box {
     position: relative;
-    width: 1440px;
-    height: 1072px;
+    width: 100%;
+    height: auto;
     background-color: #C89BFF;
     border-radius: 10px;
     overflow: hidden;
@@ -290,6 +274,7 @@ body {
     padding-left: 20px;
     transition: transform 0.3s ease-out;
 }
+
 .underline {
     display: flex;
     align-items: center;
@@ -305,30 +290,24 @@ body {
 .outside-box-subtitle,
 .outside-box-description {
     font-family: 'Bagel Fat One', sans-serif;
-    font-size: 70px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
-    margin: 0;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-
+/* Стили для анимации элемента */
 .animate-outside-container {
-    transform: translateX(0px); /* Начальное положение */
-    transition: transform 2s ease-out; /* Плавная анимация */
+    transform: translateX(0px);
+    transition: transform 2s ease-out;
 }
 
-
-
-
-/*ABOUT*/
-
-
+/* Стили для блока about */
 .about {
     position: relative;
-    width: 1440px;
-    height: 1072px;
+    width: 100%;
+    height: auto;
     background-color: #C89BFF;
     border-radius: 10px;
     overflow: hidden;
@@ -339,10 +318,95 @@ body {
 
 .about-card {
     position: relative;
-    height: 626px;
-    width: 977px;
+    height: auto; /* Адаптивная высота */
+    width: 90%; /* Адаптивная ширина */
     transform: translateY(100%);
-    transition: transform 0.5s ease-out; /* Уменьшили время для более быстрого появления */
+    transition: transform 0.5s ease-out; /* Плавная анимация */
 }
 
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 400px) {
+    body, html {
+        overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+        width: 100vw; /* Ограничиваем ширину окна просмотра */
+    }
 
+    /* Стиль для основного блока с фоном */
+    #main {
+        background-size: cover; /* Масштабирование */
+        background-position: center; /* Центрирование */
+        background-repeat: no-repeat;
+        padding: 104px 0;
+        min-height: 100vh;
+        overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+        width: 100vw; /* Ограничиваем ширину окна просмотра */
+    }
+
+    .darya-text {
+    font-size: 30px;
+    top: 50%;
+    left: 30%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+    .vector-overlay {
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        z-index: 2;
+        transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    .designer-text {
+    font-size: 30px;
+    top: 55%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+    .image-container {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    z-index: 2;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    }
+
+    .ux-ui-text {
+font-size: 10px;
+text-align: left;
+top: 50%;
+left: 80%;
+transform: translate(-50%, -50%);
+white-space: nowrap;
+    }
+
+    .creativity-text {
+        font-size: 10px;
+        text-align: center; /* Центрируем текст */
+        top: 75%;
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем по обеим осям */
+    }
+
+    .about,
+    .outside-box {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+        max-width: 100vw; /* Ограничиваем максимальную ширину */
+    }
+
+    .about-card,
+    .outside-box-content {
+        width: 90%;
+        height: auto;
+        overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+        max-width: 100vw; /* Ограничиваем максимальную ширину */
+    }
+}
